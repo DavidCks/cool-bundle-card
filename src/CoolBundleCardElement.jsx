@@ -9,6 +9,7 @@ import React from "react";
  * @param {Object} props The properties passed to the component.
  * @param {string} props.name The name of the item to display and to use as alt text for the image.
  * @param {string} props.image The URL of the image to display.
+ * @param {React.ReactNode} props.floatingElement The element to display in the middle of the lower-quarter of the image.
  * @param {function(string)} props.onSelected The callback function to invoke when the component is clicked.
  *                                    It receives the name as an argument.
  * @param {boolean} [props.selected=false] Indicates whether the component is currently selected.
@@ -19,6 +20,7 @@ export const CoolBundleCardElement = ({
   name,
   image,
   onSelected = (name) => null,
+  floatingElement,
   selected = false,
 }) => {
   const [hover, setHover] = React.useState(false);
@@ -33,7 +35,26 @@ export const CoolBundleCardElement = ({
         opacity: selected || hover ? "1" : "0.5",
       }}
     >
-      <img src={image} alt={name} style={{ width: "100%", height: "auto" }} />
+      <div
+        style={{
+          position: "relative",
+        }}
+      >
+        <img src={image} alt={name} style={{ width: "100%", height: "auto" }} />
+        {floatingElement && (
+          <div
+            style={{
+              position: "absolute",
+              bottom: "0",
+              right: "0",
+              left: "0",
+              bottom: "15%",
+            }}
+          >
+            {floatingElement}
+          </div>
+        )}
+      </div>
     </button>
   );
 };

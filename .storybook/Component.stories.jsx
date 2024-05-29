@@ -57,6 +57,40 @@ const Component = () => {
             image={placeholder}
           ></CoolBundleCardElement>
         </CoolBundleCard>
+        <CoolBundleCard
+          title="CBC"
+          label="label"
+          subtitle="by hurensohn"
+          labelMuted={labelClicked}
+          onLabelClick={() => {
+            setLabelClicked(!labelClicked);
+          }}
+        >
+          <CoolBundleCardElement
+            selected={true}
+            name="Placeholder 1"
+            image={placeholder}
+            floatingElement={<div>floating element</div>}
+          ></CoolBundleCardElement>
+          <CoolBundleCardElement
+            name="Placeholder 2"
+            image={placeholder}
+          ></CoolBundleCardElement>
+          <CoolBundleCardElement
+            name="Placeholder 3"
+            image={placeholder}
+            floatingElement={<div>floating element</div>}
+          ></CoolBundleCardElement>
+          <CoolBundleCardElement
+            name="Placeholder 4"
+            image={placeholder}
+          ></CoolBundleCardElement>
+          <CoolBundleCardElement
+            selected={true}
+            name="Placeholder 5"
+            image={placeholder}
+          ></CoolBundleCardElement>
+        </CoolBundleCard>
         <div style={{ height: "40px" }}></div>
         <CoolBundleCard title="Cool Bundle Card">
           <CoolBundleCardElement

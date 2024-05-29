@@ -87,27 +87,64 @@ export const CoolBundleCard = ({
             width: "100%",
             bottom: "0.65em",
             fontWeight: "bold",
-            height: `${label === "" ? "1.5em" : "2.6em"}`,
+            height: `${label === "" ? "1.5em" : "2em"}`,
             fontFamily: "Inika, sans-serif",
-            fontSize: "1.5em",
-            textShadow: "0 0 10px #00000088",
+            fontSize: "1.3em",
           }}
         >
-          <span>{title}</span>
-          <span style={{ paddingInlineStart: "28px", fontSize: "66%" }}>
-            {subtitle}
-          </span>
+          <div
+            style={{
+              position: "relative",
+            }}
+          >
+            <span
+              style={{
+                position: "relative",
+                paddingInlineStart: "8px",
+              }}
+            >
+              {title}
+              <div
+                style={{
+                  position: "absolute",
+                  width: "100%",
+                  height: "100%",
+                  background: "#00000066",
+                  filter: "blur(8px)",
+                  zIndex: "-1",
+                }}
+              ></div>
+            </span>
+            <span
+              style={{
+                position: "relative",
+                paddingInlineStart: "8px",
+                fontSize: "66%",
+              }}
+            >
+              {subtitle}
+              <div
+                style={{
+                  position: "absolute",
+                  width: "100%",
+                  height: "100%",
+                  background: "#00000066",
+                  filter: "blur(8px)",
+                  zIndex: "-1",
+                }}
+              ></div>
+            </span>
+          </div>
           <span
             style={{
               position: "absolute",
               display: "block",
-              paddingBlock: `${label !== "" ? "0.8em" : "0"}`,
-              bottom: "-1.1em",
+              bottom: "-0.35em",
               color: "white",
               left: "50%",
               transform: "translateX(-50%)",
               textShadow: "none",
-              fontSize: "1.8em",
+              fontSize: "1.3em",
               mixBlendMode: `${labelMuted ? "soft-light" : "normal"}`,
             }}
           >
